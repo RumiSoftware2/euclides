@@ -108,21 +108,16 @@ export default function DiagramEuclid({ width=720, height=420, theta=60, showPer
               y={B.y-10} 
               className={`fill-sky-700 text-[13px] font-medium transition-all duration-500 ${showAngles ? 'opacity-100' : 'opacity-0'}`}
             >
-              α = {alpha}°
+              ∠ABC = {alpha}°
             </text>
 
-            <path 
-              d={`M ${B.x-60} ${B.y} A 92 92 0 0 1 ${B.x + 92*Math.cos(toRad(180-theta))} ${B.y - 92*Math.sin(toRad(180-theta))}`}
-              fill="none" 
-              strokeWidth="6" 
-              className={`stroke-rose-500 transition-all duration-500 ${showAngles ? 'opacity-100' : 'opacity-0'}`} 
-            />
+            {arc(B.x,B.y,92,180-beta,180, 6, "stroke-rose-500")}
             <text 
               x={B.x-170} 
               y={B.y-10} 
               className={`fill-rose-700 text-[13px] font-medium transition-all duration-500 ${showAngles ? 'opacity-100' : 'opacity-0'}`}
             >
-              β = {beta}°
+              ∠ABD = {beta}°
             </text>
           </>
         )}
@@ -143,7 +138,7 @@ export default function DiagramEuclid({ width=720, height=420, theta=60, showPer
             y={B.y-120} 
             className="fill-slate-900 text-[18px] font-bold animate-bounce"
           >
-            α + β = 180°
+            ∠ABC + ∠ABD = 180°
           </text>
         )}
       </svg>
@@ -151,7 +146,7 @@ export default function DiagramEuclid({ width=720, height=420, theta=60, showPer
         <div className="flex items-center gap-2">
           <span className="text-lg">🏺</span>
           <span className="text-sm text-slate-700 font-medium">
-            {theta===90 ? "Caso perpendicular: dos rectos." : "Caso general: α + β = 180°."}
+            {theta===90 ? "Caso perpendicular: ∠ABC = ∠ABD = 90°." : "Caso general: ∠ABC + ∠ABD = 180°."}
           </span>
         </div>
       </div>
