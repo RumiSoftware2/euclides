@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* (opcional) theming CSS-first */
+@theme {
+  --color-primary: oklch(0.63 0.16 255); /* azul frío */
+  --radius-card: 1.25rem;
+}
