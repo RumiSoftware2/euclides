@@ -50,7 +50,7 @@ export default function DiagramEuclid({ width=720, height=420, theta=60, showPer
         </defs>
         <rect width={width} height={height} fill="url(#greekPattern)" />
         
-        {/* recta DG con animación */}
+        {/* recta CD con animación */}
         <line 
           x1="40" 
           y1={B.y} 
@@ -59,8 +59,8 @@ export default function DiagramEuclid({ width=720, height=420, theta=60, showPer
           className={`stroke-slate-900 transition-all duration-700 ${animate ? 'stroke-width-6' : 'stroke-width-5'}`} 
           strokeWidth="5" 
         />
-        <text x="56" y={B.y+24} className="fill-slate-700 text-[14px] font-medium">D</text>
-        <text x={width-56} y={B.y+24} className="fill-slate-700 text-[14px] font-medium">G</text>
+        <text x="56" y={B.y+24} className="fill-slate-700 text-[14px] font-medium">C</text>
+        <text x={width-56} y={B.y+24} className="fill-slate-700 text-[14px] font-medium">D</text>
 
         {/* punto B con efecto de pulso */}
         <circle 

@@ -26,7 +26,7 @@ export default function App() {
           </div>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-slate-600 leading-relaxed bg-white/70 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-amber-200">
-              <span className="font-semibold text-amber-700">Teorema:</span> Si una recta se levanta sobre otra, forma dos ángulos rectos o ángulos que suman dos rectos (180°).
+              <span className="font-semibold text-amber-700">Proposición 13, Libro I:</span> Si una recta se levanta sobre otra recta, forma ángulos adyacentes que son iguales a dos rectos.
             </p>
           </div>
           <div className="flex justify-center items-center gap-6 mt-6 text-sm text-slate-500">
