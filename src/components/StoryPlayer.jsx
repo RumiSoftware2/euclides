@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import DiagramEuclid from "./DiagramEuclid";
+import greekGif from "../assets/griego hablando.gif";
 
 export default function StoryPlayer({ slides, auto=false, delay=3500 }) {
   const [i, setI] = useState(0);
@@ -24,9 +25,17 @@ export default function StoryPlayer({ slides, auto=false, delay=3500 }) {
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-6">
+    <div className="relative grid md:grid-cols-2 gap-6">
       <div className={`transition-all duration-300 ${isAnimating ? 'scale-95 opacity-75' : 'scale-100 opacity-100'}`}>
         <DiagramEuclid {...s.diagram} />
+      </div>
+      {/* GIF en móviles: entre el diagrama y el chat */}
+      <div className="md:hidden flex items-center justify-center">
+        <img 
+          src={greekGif} 
+          alt="Griego hablando" 
+          className="w-20 h-20 rounded-full shadow-lg border-2 border-amber-300 bg-white/70 backdrop-blur-sm"
+        />
       </div>
       <div className={`bg-white rounded-[var(--radius-card)] shadow-lg p-6 transition-all duration-300 ${isAnimating ? 'translate-x-2' : 'translate-x-0'}`}>
         <div className="flex items-center gap-3 mb-4">
@@ -87,6 +96,37 @@ export default function StoryPlayer({ slides, auto=false, delay=3500 }) {
             ))}
           </div>
         </div>
+
+        {/* Pie de nota con citas teóricas */}
+        <div className="mt-6 pt-4 border-t border-slate-200">
+          <div className="flex items-center gap-2 mb-2">
+            <span>📝</span>
+            <span className="text-sm font-semibold text-slate-700">Notas teóricas</span>
+          </div>
+          <div className="space-y-3 text-sm text-slate-700">
+            <div>
+              <div className="font-medium text-slate-800">Proposición 11 (Libro I)</div>
+              <div className="mt-1 italic bg-amber-50/60 border border-amber-200 rounded p-3">
+                "Trazar una recta perpendicular a una recta dada desde un punto dado en ella."
+              </div>
+            </div>
+            <div>
+              <div className="font-medium text-slate-800">Noción Común 2</div>
+              <div className="mt-1 italic bg-amber-50/60 border border-amber-200 rounded p-3">
+                "Si a iguales se añaden iguales, los todos son iguales."
+              </div>
+            </div>
+          </div>
+          <div className="mt-2 text-xs text-slate-500">Fuente: Libro I, "Elementos" de Euclides.</div>
+        </div>
+      </div>
+      {/* GIF centrado entre el chat y la gráfica en pantallas medianas en adelante */}
+      <div className="pointer-events-none absolute inset-0 hidden md:flex items-center justify-center z-10">
+        <img 
+          src={greekGif} 
+          alt="Griego hablando" 
+          className="w-24 h-24 rounded-full shadow-xl border-2 border-amber-300 bg-white/70 backdrop-blur-sm"
+        />
       </div>
     </div>
   );

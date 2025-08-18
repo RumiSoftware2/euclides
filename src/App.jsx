@@ -1,6 +1,7 @@
 import "./index.css";
 import { slides } from "./story/slides";
 import StoryPlayer from "./components/StoryPlayer";
+import greekGif from "./assets/griego hablando.gif";
 
 export default function App() {
   return (
@@ -20,6 +21,18 @@ export default function App() {
               Euclides – Proposición 13
             </h1>
             <div className="text-4xl">📐</div>
+          </div>
+          <div className="flex justify-center mb-6">
+            <div className="relative group">
+              <img 
+                src={greekGif} 
+                alt="Griego hablando" 
+                className="w-32 h-32 rounded-lg shadow-lg border-2 border-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl"
+              />
+              <div className="absolute -top-2 -right-2 bg-amber-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">
+                ¡Vivo!
+              </div>
+            </div>
           </div>
           <div className="text-2xl md:text-3xl font-semibold text-slate-700 mb-4">
             Historia Ilustrada
@@ -50,7 +63,12 @@ export default function App() {
       </main>
       
       <footer className="relative text-center py-8 text-slate-500">
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center gap-4 mb-4">
+          <img 
+            src={greekGif} 
+            alt="Griego hablando" 
+            className="w-16 h-16 rounded-full shadow-md border border-amber-200"
+          />
           <span>🏺</span>
           <span>Geometría Clásica Griega</span>
           <span>📐</span>
